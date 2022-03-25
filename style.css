@@ -1,0 +1,271 @@
+/* =============== Variables =============== */
+/* =============== Reset =============== */
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: #333;
+}
+
+body {
+  background-color: #17A2B8;
+}
+
+/* =============== h1 =============== */
+h1 {
+  text-align: center;
+  margin: 2rem 0 3rem;
+  color: #fff;
+}
+
+/* =============== tab_menu =============== */
+.tab_menu {
+  width: 750px;
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.tab_menu li {
+  width: 50%;
+}
+
+.tab_menu li a {
+  display: block;
+  text-align: center;
+  padding: 1rem 0;
+  font-size: 1.15rem;
+  color: #fff;
+}
+
+.tab_menu li a.active {
+  background-color: #fff;
+  border-radius: 10px 10px 0 0;
+  color: #17A2B8;
+  font-weight: bold;
+}
+
+/* =============== tab_con =============== */
+.tab_con {
+  width: 750px;
+  margin: 0 auto 50px;
+  min-height: 150px;
+  background-color: #fff;
+  padding: 1.5rem;
+  border-radius: 0 0 10px 10px;
+}
+
+.tab_con > div {
+  display: none;
+}
+
+.tab_con .active {
+  display: block;
+}
+
+/* =============== .tab_con .con_search =============== */
+.tab_con .con_search .search_box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.tab_con .con_search .search_box label {
+  display: none;
+}
+
+.tab_con .con_search .search_box input {
+  width: 80%;
+  padding: 10px;
+  outline: none;
+  border: 3px solid #17A2B8;
+  border-radius: 10px;
+}
+
+.tab_con .con_search .search_box button {
+  width: 15%;
+  padding: 10px 0;
+  border: 3px solid #17A2B8;
+  border-radius: 10px;
+  background: #17A2B8;
+  color: #fff;
+  cursor: pointer;
+  -webkit-transition: .3s;
+  transition: .3s;
+}
+
+.tab_con .con_search .search_box button:hover {
+  background: #fff;
+  color: #17A2B8;
+}
+
+.tab_con .con_search .search_result ul li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 10px;
+  margin-bottom: 20px;
+}
+
+.tab_con .con_search .search_result ul li:first-child {
+  margin-top: 30px;
+}
+
+.tab_con .con_search .search_result ul li:hover {
+  background: rgba(23, 162, 184, 0.15);
+}
+
+.tab_con .con_search .search_result ul li img {
+  width: 15%;
+}
+
+.tab_con .con_search .search_result ul li dl {
+  width: 75%;
+  padding: 0 20px;
+}
+
+.tab_con .con_search .search_result ul li dl dt {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-weight: bold;
+}
+
+.tab_con .con_search .search_result ul li dl dd a {
+  -webkit-text-decoration: 1px underline #333;
+          text-decoration: 1px underline #333;
+}
+
+.tab_con .con_search .search_result ul li button {
+  padding: .5rem 1rem;
+  border: none;
+  border-radius: 5px;
+  background: #17A2B8;
+  color: #fff;
+  cursor: pointer;
+  -webkit-transition: .3s;
+  transition: .3s;
+}
+
+.tab_con .con_search .search_result ul li button:hover {
+  background: #fff;
+  color: #17A2B8;
+  outline: 3px solid #17A2B8;
+}
+
+/* =============== .tab_con .con_list =============== */
+.tab_con .con_list ul li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.tab_con .con_list ul li:hover {
+  background: rgba(23, 162, 184, 0.15);
+}
+
+.tab_con .con_list ul li input {
+  display: none;
+}
+
+.tab_con .con_list ul li label {
+  max-width: 85%;
+  padding: 15px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  -webkit-transition: all .5s;
+  transition: all .5s;
+  cursor: pointer;
+}
+
+.tab_con .con_list ul li button {
+  padding: .5rem 1rem;
+  border: none;
+  border-radius: 5px;
+  background: #17A2B8;
+  color: #fff;
+  cursor: pointer;
+  -webkit-transition: .3s;
+  transition: .3s;
+}
+
+.tab_con .con_list ul li button:hover {
+  background: #fff;
+  color: #17A2B8;
+  outline: 3px solid #17A2B8;
+}
+
+.tab_con .con_list ul li.completed label {
+  -webkit-text-decoration: 1.5px line-through #999;
+          text-decoration: 1.5px line-through #999;
+  color: #999;
+}
+
+/* ==================== Media query ==================== */
+@media screen and (max-width: 800px) {
+  .tab_menu,
+  .tab_con {
+    width: 90%;
+  }
+}
+
+@media screen and (max-width: 530px) {
+  .tab_menu,
+  .tab_con {
+    min-width: 360px;
+    width: 100%;
+  }
+  .tab_con {
+    padding: .85rem;
+  }
+  .tab_con .con_search .search_box button {
+    font-size: .45rem;
+  }
+  .tab_con .con_search .search_result ul li img {
+    display: none;
+  }
+  .tab_con .con_search .search_result ul li dl {
+    padding: 0;
+  }
+  .tab_con .con_list ul li label {
+    padding: 10px 15px;
+  }
+}
+/*# sourceMappingURL=style.css.map */

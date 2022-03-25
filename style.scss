@@ -1,0 +1,267 @@
+/* =============== Variables =============== */
+$base-color : #17A2B8;
+$point-color : #fff;
+$hover-bg : rgba(23, 162, 184, .15);
+
+@mixin flexCenter{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+@mixin btn{
+    padding: .5rem 1rem;
+    border: none;
+    border-radius: 5px;
+    background: $base-color;
+    color: $point-color;
+    cursor: pointer;
+    transition: .3s;
+}
+
+@mixin btnHover{
+    background: $point-color;
+    color: $base-color;
+    outline: 3px solid $base-color;
+}
+
+
+
+/* =============== Reset =============== */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+ul{
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+    color: #333;
+}
+
+body{
+    background-color: $base-color;
+}
+
+
+
+/* =============== h1 =============== */
+h1{
+    text-align: center;
+    margin: 2rem 0 3rem;
+    color: $point-color;
+}
+
+
+
+/* =============== tab_menu =============== */
+.tab_menu{
+    width: 750px;
+    margin: 0 auto;
+    @include flexCenter();
+
+    li{
+        width: 50%;
+
+        a{
+            display: block;
+            text-align: center;
+            padding: 1rem 0;
+            font-size: 1.15rem;
+            color: $point-color;
+        }
+
+        a.active{
+            background-color: $point-color;
+            border-radius: 10px 10px 0 0;
+            color: $base-color;
+            font-weight: bold;
+        }
+    }
+}
+
+
+
+/* =============== tab_con =============== */
+.tab_con{
+    width: 750px;
+    margin: 0 auto 50px;
+    min-height: 150px;
+    background-color: $point-color;
+    padding: 1.5rem;
+    border-radius: 0 0 10px 10px;
+
+    > div{
+        display: none;
+    }
+
+    .active{
+        display: block;
+    }
+}
+
+
+
+/* =============== .tab_con .con_search =============== */
+.tab_con .con_search{
+    .search_box{
+        @include flexCenter();
+    
+        label{
+            display: none;
+        }
+    
+        input{
+            width: 80%;
+            padding: 10px;
+            outline: none;
+            border: 3px solid $base-color;
+            border-radius: 10px;
+        }
+    
+        button{
+            width: 15%;
+            padding: 10px 0;
+            border: 3px solid $base-color;
+            border-radius: 10px;
+            background: $base-color;
+            color: $point-color;
+            cursor: pointer;
+            transition: .3s;
+
+            &:hover{
+                background: $point-color;
+                color: $base-color;
+            }
+        }
+    }
+
+    .search_result{
+        ul li{
+            @include flexCenter();
+            padding: 10px;
+            margin-bottom: 20px;
+
+            &:first-child{
+                margin-top: 30px;
+            }
+
+            &:hover{
+                background: $hover-bg;
+            }
+
+            img{
+                width: 15%;
+            }
+
+            dl{
+                width: 75%;
+                padding: 0 20px;
+
+                dt{
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    white-space: nowrap;
+                    font-weight: bold;
+                }
+
+                dd a{
+                    text-decoration: 1px underline #333;
+                }
+                
+            }
+
+            button{
+                @include btn();
+
+                &:hover{
+                    @include btnHover();
+                }
+            }
+        }
+    }
+}
+
+
+
+/* =============== .tab_con .con_list =============== */
+.tab_con .con_list ul{
+    li{
+        @include flexCenter();
+        border-radius: 10px;
+        padding: 10px;
+    
+        &:hover{
+            background: $hover-bg;
+        }
+    
+        input{
+            display: none;
+        }
+    
+        label{
+            max-width: 85%;
+            padding: 15px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            transition: all .5s;
+            cursor: pointer;
+        }
+
+        button{
+            @include btn();
+
+            &:hover{
+                @include btnHover();
+            }
+        }
+    }
+
+    li.completed label{
+        text-decoration: 1.5px line-through #999;
+        color: #999;
+    }
+}
+
+
+
+/* ==================== Media query ==================== */
+@media screen and (max-width: 800px) {
+    .tab_menu,
+    .tab_con{
+        width: 90%;
+    }
+}
+
+@media screen and (max-width: 530px) {
+    .tab_menu,
+    .tab_con{
+        min-width: 360px;
+        width: 100%;
+    }
+
+    .tab_con{
+        padding: .85rem;
+    }
+
+    .tab_con .con_search .search_box button{
+        font-size: .45rem;
+    }
+
+    .tab_con .con_search .search_result ul li img{
+        display: none;
+    }
+
+    .tab_con .con_search .search_result ul li dl{
+        padding: 0;
+    }
+
+    .tab_con .con_list ul li label{
+        padding: 10px 15px;
+    }
+}
